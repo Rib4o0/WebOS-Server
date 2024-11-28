@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebOS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+    --background: #fff;
+    --lighter-shade: #ececec;
+    --accent: #374dde;
+    --text: #000;
+    --icon-filter: none;
+    --font: "Instrument sans", sans-serif;
+    --clock-shadow: none;
+}
+
+[data-glass="on"] {
+    --background: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] {
+    --background: #070707;
+    --lighter-shade: #222;
+    /* --accent: #f90000; */
+    --text: #fff;
+    --icon-filter: invert();
+}
+
+[data-glass="on"][data-theme="dark"] {
+    --background: rgba(0,0,0,0.5);
+}
+
+[data-font="handwritten"] {
+    --font: "Pacifico", sans-serif;
+}
+
+[data-font="modern"] {
+    --font: "Space Grotesk", sans-serif;
+}
+
+[data-clock-shadow="on"] {
+    --clock-shadow:0px 0px 10px #000;
+}
+
+* {
+    /* font-family: "Space Grotesk", sans-serif; */
+    font-family: var(--font);
+    color: var(--text);
+}
+
+
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Ensure it stretches across the full width */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    background: url(https://512pixels.net/downloads/macos-wallpapers-thumbs/10-14-Day-Thumb.jpg);
+    background-size: cover; /* Make sure the image covers the entire element */
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent tiling */
+}
+
+
+.newWindowBtn { 
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 2px solid #ececec;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    background-color: var(--lighter-shade);
+    width: 40%;
+    height: 30px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px 5px 0 0;
+    z-index: 800;
+}
+
+.app {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.app::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 5px);
+    translate: -50% -50%;
+    left: 50%;
+    width: 20px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--accent);
+    opacity: 0;
+    transition: all 250ms;
+}
+
+.app.open::before {
+    opacity: 1;
+}
+
+.app > img {
+    width: 20px;
+    height: 20px;
+    filter: var(--icon-filter);
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--lighter-shade);
+    transition: all 250ms;
+    z-index: 1002;
+}
+
+.notification.hide {
+    right: -20px;
+    transform: translateX(100%);
+}
+
+.notification > .msg {
+    font-size: 18px;
+}
+
+.notification > .from {
+    opacity: 0.6;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.notification > .dismiss {
+    position: absolute; bottom: 10px;
+    right: 10px;
+    background: var(--background);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.clock {
+    position: fixed;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.clock > .time {
+    font-size: 64px;
+    color: white;
+    text-shadow: var(--clock-shadow);
+}
+
+.clock > .date {
+    color: white;
+    text-shadow: var(--clock-shadow);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    display: block;
+}
+
+::-webkit-scrollbar-track {
+    width: 5px;
+    background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 5px;
+}
+    </style>
+    <link rel="stylesheet" href="window.css">
+    <script src="/window.js" type="module" defer></script>
+    <script src="https://kit.fontawesome.com/30d2125a90.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="desktop">   
+    </div>
+    <footer class="taskbar">
+    </footer>
+    <div class="notification hide">
+        <div class="msg"></div>
+        <div class="from"></div>
+        <button class="dismiss">Dismiss</button>
+    </div>
+    <div class="clock">
+        <div class="time">17:32:10</div>
+        <div class="date">November 21 2024</div>
+    </div>
+</body>
+</html>

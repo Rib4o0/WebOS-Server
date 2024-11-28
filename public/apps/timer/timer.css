@@ -1,0 +1,64 @@
+.window:has(.timerApp) {
+    background: transparent;
+}
+
+.timerApp {
+    width: calc(100% - 20px);
+    height: calc(100% - 50px);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: var(--background);
+    backdrop-filter: blur(10px);
+}
+
+.timerApp > .time {
+    font-size: 30px;
+}
+
+.timerApp > .progressBar {
+    width: 50%;
+    height: 5px;
+    background-color: var(--lighter-shade);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.timerApp > .progressBar > .progress {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: inherit;
+    transition: all 250ms;
+}
+
+.timerApp > .inputs {
+    display: flex;
+    width: 200px;
+    height: 30px;
+    justify-content: space-between;
+}
+
+.timerApp > .inputs > .timeInput {
+    width: 65%;
+    border: 2px solid var(--lighter-shade);
+    background-color: var(--background);
+}
+
+.timerApp > .inputs > .startBtn {
+    width: 60px;
+    border: none;
+    border-radius: 2px;
+}
+
+.timerApp > .inputs > .startBtn {
+    background-color: var(--accent);
+    color: white;
+}
+
+.timerApp > .inputs > .startBtn.stop {
+    background-color: rgb(255, 43, 43);
+}
