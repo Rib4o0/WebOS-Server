@@ -35,6 +35,7 @@ let mouseY = 0;
 
 const downloadedApps = [
     "timer",
+    "console",
     "appStore"
 ];
 
