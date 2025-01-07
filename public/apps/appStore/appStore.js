@@ -23,10 +23,10 @@ export function init(windowBody) {
             loadAppStore()
         })
         .catch((error) => {
-            console.error("Error fetching JSON:", error); 
+            console.error("Error fetching JSON:", error);
             windowBody.innerHTML = "Failed to load app data." + error;
         });
-        
+
         function loadAppStore() {
             windowBody.innerHTML = ``;
             for (let app of apps) {
@@ -37,7 +37,7 @@ export function init(windowBody) {
                         <button data-app="${app.appName}" class="downloadBtn ${app.downloaded ? "installed" : ""}">${app.downloaded ? "Uninstall" : "Download"}</button>
                     </div>
                 `;
-            } 
+            }
             windowBody.querySelectorAll(".downloadBtn").forEach(btn => {
                 btn.addEventListener("click", () => {
                     if (btn.classList.contains("installed")) {
@@ -68,5 +68,3 @@ export function init(windowBody) {
             })
         }
 }
-
-

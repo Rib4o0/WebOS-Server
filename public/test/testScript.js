@@ -2,7 +2,7 @@ const menuBtn = document.querySelector('.closeMenu');
 const content = document.querySelector('.content');
 const sectionTitle = document.querySelector('.sectionTitle');
 const sidebar = document.querySelector('.sidebar');
-const projectsTab = sidebar.querySelector('.projects');
+const tabs = sidebar.querySelectorAll("[data-tab]");
 
 let projects = [
     {   
@@ -27,11 +27,13 @@ menuBtn.addEventListener('click', () => {
     menu.classList.toggle('opened');
 });
 
-projectsTab.addEventListener('click', () => {
-    loadSection("projects");
-});
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        loadSection(tab.dataset.tab);
+    })
+})
 
-loadSection("projects");
+// loadSection("dashboard");
 
 function loadSection(section) {
     if (section === "projects") {
@@ -90,6 +92,12 @@ function loadSection(section) {
                 newProjectMenu.classList.add('closed');
             });
         });
+    } else if (section === "dashboard") {
+        sectionTitle.textContent = "Dashboard";
+        content.innerHTML = `
+            <div class="overview"></div>
+            <div class="recentProjects"></div>
+        `;
     }
 }
 
@@ -105,6 +113,10 @@ windowBody.innerHTML = "HTML code goes here...";
 }
 */
 function createProject(name, desc, template) {
+    let defaultName = false;
+    if (name === "") defaultName = true;
+    let defaultDescription = false
+    if (desc === "") defaultDescription = true;
     const newProject = {
         projectName: name,
         projectDescription: desc,
@@ -116,8 +128,11 @@ function createProject(name, desc, template) {
         case 'Blank':
             newProject.css = '';
             newProject.js = '';
+            if (defaultName) newProject.projectName = "Blank Project #" + (projects.length + 1);
             break;
         case 'Basic':
+            if (defaultName) newProject.projectName = "Basic Project #" + (projects.length + 1);
+            if (defaultDescription) newProject.projectDescription = "A basic project";
             newProject.css = `/* CSS code goes here */`;
             newProject.js = `function init(windowBody) {
     const windowName = windowBody.parentElement
@@ -130,6 +145,8 @@ function createProject(name, desc, template) {
 }`;
             break;
         case 'Game':
+            if (defaultName) newProject.projectName = "Game Project #" + (projects.length + 1);
+            if (defaultDescription) newProject.projectDescription = "A basic game project";
             newProject.css = `GAME TEMPLATE IS STILL WORK IN PROGRESS`;
             newProject.js = `GAME TEMPLATE IS STILL WORK IN PROGRESS`;
             break;

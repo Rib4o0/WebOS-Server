@@ -24,35 +24,28 @@
     <div class="testSpace">
         <div class="sectionTitle">Project #1</div>
         <div class="content">
-            <div class="saveControls">
-                <div class="saveStatus">Project Saved Succesfully</div>
-                <div class="saveProject">Save</div>
-                <div class="testProject">Test</div>
-                <div class="deleteProject">Delete</div>
+            <div class="overview section">
+                <div class="title">Overview</div>
             </div>
-            <div class="textEditor">
-                <div class="javascript">
-                    <div class="tab">JavaScript</div>
-                    <div class="jsEditor"></div>
-                </div>
-                <div class="css">
-                    <div class="tab">CSS</div>
-                    <div class="cssEditor"></div>
-                </div>
-            </div>
-            <button class="projectSettingsBtn">Open Project Settings</button> 
-            <div class="projectSettingsMenu">
-                <label for=".projectNameInput">Project Name:</label>
-                <input type="text" class="projectNameInput" placeholder="Project Name">
-                <label for=".projectDescriptionInput">Project Description:</label>
-                <input type="text" class="projectDescriptionInput">
-            </div>           
+
         </div>
         <div class="sidebar">
             <div class="title">Menu</div>
             <button class="closeMenu"><i class="fa-solid fa-chevron-left"></i></button>
             <div class="main">
-                <div class="projects">Projects</div>
+                <div data-tab="dashboard" class="dashboard">Dashboard</div>
+                <div data-tab="projects" class="projects">Projects</div>
+                <div data-tab="favorites" class="favorites">Favorites</div>
+                <div data-tab="categories" class="categories">Categories</div>
+                <div data-tab="tasks" class="tasks">Tasks</div>
+            </div>
+            <div class="recentProjects">
+                <div class="title">Recent Projects</div>
+                <div class="projects">
+                    <div class="recentProject">My First App</div>
+                    <div class="recentProject">MineSweeper</div>
+                    <div class="recentProject">App Creator</div>
+                </div>
             </div>
             <div class="footer">
                 <div class="howToUse">How to use</div>
