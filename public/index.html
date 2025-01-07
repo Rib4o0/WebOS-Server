@@ -20,6 +20,8 @@
     --icon-filter: none;
     --font: "Instrument sans", sans-serif;
     --clock-shadow: none;
+    --shadow: #aaa;
+    --highlights: #fff;
 }
 
 [data-glass="on"] {
@@ -32,6 +34,8 @@
     /* --accent: #f90000; */
     --text: #fff;
     --icon-filter: invert();
+    --shadow: #000;
+    --highlights: #333;
 }
 
 [data-glass="on"][data-theme="dark"] {
@@ -100,6 +104,14 @@ body {
     position: relative;
     width: 20px;
     height: 20px;
+    background-color: var(--lighter-shade);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.app.open {
+    box-shadow: 3px 3px 5px var(--shadow),
+    -3px -3px 5px var(--highlights);
 }
 
 .app::before {
@@ -117,7 +129,7 @@ body {
 }
 
 .app.open::before {
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 .app > img {

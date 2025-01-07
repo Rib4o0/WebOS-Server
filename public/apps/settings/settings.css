@@ -1,0 +1,113 @@
+.window:has(.settingsApp) {
+    min-height: 400px;
+    min-width: 600px;
+    background: transparent;
+}
+
+.settingsApp {
+    position: relative;
+    background: var(--background);
+    backdrop-filter: blur(10px);
+}
+
+.settingsApp > .sidePanel {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--lighter-shade);
+}
+
+.settingsApp > .sidePanel > button {
+    text-align: left;
+    padding-inline: 20px;
+    height: 50px;
+    background: transparent;
+    /*border: 0.25px solid var(--lighter-shade);*/
+    border: none;
+    font-weight: 700;
+}
+
+.settingsApp > .sidePanel > button.selected {
+    /* text-shadow: 0px 2px 0px var(--accent); */
+    border-right: solid 3px var(--accent);
+}
+
+.settingsApp {
+    display: flex;
+    flex-direction: row;
+}
+
+.settingsApp > .controlSide {
+    padding: 10px 15px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.settingsApp > .controlSide > .currentTab {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.settingsApp > .controlSide > .setting {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settingsApp > .controlSide > .setting > .options {
+    display: flex;
+    /*gap: 5px;*/
+}
+
+.settingsApp > .controlSide > .setting > .options > div {
+    background-color: var(--lighter-shade);
+    padding: 7px 20px;
+}
+
+.settingsApp > .controlSide > .setting > .options > div:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.settingsApp > .controlSide > .setting > .options > div:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.settingsApp > .controlSide > .setting > .options > .selected {
+    background: var(--accent);
+    color: #fff;
+}
+
+.settingsApp > .controlSide > .setting > .inputField > input {
+    background-color: var(--background);
+    border: 2px solid var(--lighter-shade);
+    border-radius: 5px;
+    height: 25px;
+}
+
+.settingsApp > .controlSide > .setting > .inputField > input:focus {
+    outline: none;
+}
+
+.settingsApp > .controlSide > .setting > .colorInput {
+    position: relative;
+}
+
+.settingsApp > .controlSide > .setting > .colorInput > input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 25px;
+    /* display: none; */
+}
+
+.settingsApp > .controlSide > .setting > .colorInput > .customColorPicker {
+    width: 25px;
+    height: 25px;
+    background-color: var(--accent); /* Set initial color */
+    border: none;
+    border-radius: 3px;
+}

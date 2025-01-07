@@ -1,0 +1,74 @@
+.window:has(.notesApp) {
+    min-width: 600px;
+}
+
+.notesApp > .sidePanel {
+    width: 200px;
+    /* max-width: 30%; */
+    /* display: flex;
+    flex-direction: column; */
+    height: 100%;
+    border-right: 2px solid var(--lighter-shade);
+    overflow-y: scroll;
+}
+
+.notesApp > .sidePanel > .note {
+    display: block;
+    height: 40px;
+    padding: 10px;
+    border-bottom: 2px solid var(--lighter-shade);
+}
+
+.notesApp > .sidePanel > .note > .title {
+    font-weight: 700;
+}
+
+.notesApp > .sidePanel > .note > .description {
+    font-size: 12px;
+}
+
+.notesApp > .addNoteBtn {
+    width: 40px;
+    aspect-ratio: 1;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 100px;
+    border: 2px solid var(--lighter-shade);
+    font-size: 20px;
+    background: var(--lighter-shade);
+    z-index: 1;
+}
+
+.notesApp > .noteEditPanel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* background: red; */
+    width: calc(100% - 220px);
+    height: calc(100% - 20px);
+    padding: 10px;
+}
+
+.notesApp > .noteEditPanel > .title {
+    border: none;
+    font-size: 20px;
+    width: 100%;
+    background: transparent;
+}
+
+.notesApp > .sidePanel > .note.selected {
+    border-right: solid 3px var(--accent);
+}
+
+.notesApp > .noteEditPanel > .title:focus,.notesApp > .noteEditPanel > .content:focus {
+    outline: none;
+}
+
+.notesApp > .noteEditPanel > .content {
+    border: none;
+    width: 100%;
+    height: 90%;
+    resize: none;
+    background: transparent;
+}

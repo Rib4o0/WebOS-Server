@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.window:has(.appCreator) {
+    min-width: 1050px;
+    min-height: 400px;
+}
+
+.appCreator {
+
+    width: 100%;
+    height: calc(100% - 30px);
+}
+
+.appCreator > * {
+    font-family: 'Inter';
+}
+
+.appCreator > .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: calc(100% - 20px);
+    background-color: var(--background);
+    padding: 10px 0px;
+    border-right: 2px solid var(--lighter-shade);
+}
+
+.appCreator > .sidebar.opened {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: calc(100% - 20px);
+    background-color: var(--background);
+    padding: 10px 20px;
+    border-right: 2px solid var(--lighter-shade);
+}
+
+.appCreator > .sidebar > .title {
+    display: none;
+}
+
+.appCreator > .sidebar.opened > .title {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.appCreator > .sidebar > .closeMenu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+    transform: rotateY(180deg);
+}
+
+.appCreator > .sidebar.opened > .closeMenu {
+    right: 10px;
+    transform: rotateY(0deg);
+}
+
+.appCreator > .sidebar > .main {
+    display: none;
+}
+
+.appCreator > .sidebar.opened > .main {
+    display: block;
+    width: calc(100%);
+    margin-top: 10px;
+}
+
+.appCreator > .sidebar.opened > .main > div {
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.appCreator > .sidebar.opened > .main > div:not(:first-child) {
+    border-top: 2px solid var(--lighter-shade);
+}
+
+.appCreator > .sidebar > .footer {
+    display: none;
+}
+
+.appCreator > .sidebar.opened > .footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background: red; */
+    width: calc(100% - 40px);
+    padding: 0px 20px;
+}
+
+.appCreator > .sidebar.opened > .footer > div {
+    padding: 10px 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.appCreator > .sidebar.opened > .footer > div:not(div:first-child) {
+    border-top: 2px solid var(--lighter-shade);
+}
+
+.appCreator > .sectionTitle {
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 60px;
+}
+
+.appCreator > .content > .createNewProject {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;;
+}
+
+.appCreator > .content > .projectContainer {
+    margin-left: 60px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 230px);
+    gap: 10px;
+}
+
+.appCreator:has(.sidebar.opened) > .content > .projectContainer {
+   margin-left: 250px;
+}
+
+.appCreator:has(.sidebar.opened) > .sectionTitle {
+    margin-left: 250px;
+}
+
+.appCreator > .content > .projectContainer > .project {
+    background: var(--lighter-shade);
+    padding: 10px 10px;
+    border-radius: 10px;
+    height: 140px;
+    position: relative;
+}
+
+.appCreator > .content > .projectContainer > .project > .projectName {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.appCreator > .content > .projectContainer > .project > .projectDesc {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.appCreator > .content > .projectContainer > .project > .lastModified {
+    width: 150px;
+    font-size: 14px;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

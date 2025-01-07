@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {"appName": "calculator", "downloads": 0, "displayName": "Calculator", "version": "v1.0", "downloaded": false},
+        {"appName": "console", "downloads": 0, "displayName": "Console App", "version": "v1.0", "downloaded": false},
+        {"appName": "timer", "downloads": 0, "displayName": "Timer", "version": "v1.0", "downloaded": false},
+        {"appName": "notes", "downloads": 0, "displayName": "Notes", "version": "v1.0", "downloaded": false},
+        {"appName": "appCreator", "downloads": 0, "displayName": "App Creator", "version": "v1.0", "downloaded": false}
+    ]
+}

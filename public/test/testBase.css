@@ -1,0 +1,40 @@
+body.offline{
+    background: black !important;
+}
+
+:root {
+    --background: #fff;
+    --lighter-shade: #ececec;
+    --accent: #374dde;
+    --text: #000;
+    --icon-filter: none;
+    --font: "Instrument sans", sans-serif;
+    --clock-shadow: none;
+    --shadow: #aaa;
+    --highlights: #fff;
+}
+
+.offlineMode {
+    display:none
+}
+
+body.offline > .offlineMode {
+    display: block;
+}
+
+body.offline > .testSpace {
+    display: none;
+}
+
+.offlineMode > img {
+    width: 300px;
+    aspect-ratio: 1;
+    border: 1px solid red;
+}
+
+.offlineMode > a {
+    background: red;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+}

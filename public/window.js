@@ -3,7 +3,7 @@ const clock = document.querySelector(".clock")
 const clockTime = clock.querySelector(".time");
 const clockDate = clock.querySelector(".date");
 
-// import {consoleLog} from "./windowApps/console/console.js"
+import {consoleLog} from "./apps/console/console.js";
 
 function updateClock() {
     const now = new Date();
@@ -33,16 +33,29 @@ updateClock();
 let mouseX = 0;
 let mouseY = 0;
 
-const downloadedApps = [
-    "timer",
-    "console",
-    "appStore"
+let defaultApps = [
+    "appStore",
+    "settings"
 ];
+
+
+export let downloadedApps = [
+
+];
+
+if (localStorage.getItem("apps")) {
+    let notLoadedApps = JSON.parse(localStorage.getItem("apps"));
+    for (let app of notLoadedApps) if (!downloadedApps.includes(app)) downloadedApps.push(app);
+}
+
+for (let app of defaultApps) if (!downloadedApps.includes(app)) downloadedApps.push(app);
 
 let openApps = [];
 let openWindows = [];
 
-function loadApps() {
+export function loadApps() {
+    localStorage.setItem("apps", JSON.stringify(downloadedApps));
+    document.querySelector(".taskbar").innerHTML = "";
     for (let app of downloadedApps) {
         const newApp = document.createElement("div");
         newApp.classList.add("app");
@@ -80,7 +93,8 @@ function loadApps() {
 
 loadApps();
 
-async function createWindow(name, appName = "calculator") {
+
+async function createWindow(name, appName) {
     const windowElement = document.createElement("div");
     const moveBar = document.createElement("div");
     const windowName = document.createElement("div");
@@ -133,12 +147,20 @@ async function createWindow(name, appName = "calculator") {
         let offsetY = windowElement.getBoundingClientRect().top - mouseY;
         let offsetX = windowElement.getBoundingClientRect().left - mouseX;
         moveInterval = setInterval(() => {
+            if (mouseY + offsetY < 0) mouseY = -offsetY; 
+            if (mouseY + offsetY > window.innerHeight - 30) mouseY = window.innerHeight + offsetY;
+            if (mouseX + offsetX < 0) mouseX = -offsetX; 
+            if (mouseX + offsetX > window.innerWidth - 30) mouseX = window.innerWidth + offsetX;
             windowElement.style.top = (mouseY + offsetY) + "px";
             windowElement.style.left = (mouseX + offsetX) + "px";
         })
     })
 
     window.addEventListener("mouseup", () => {
+        clearInterval(moveInterval)
+    })
+
+    window.addEventListener("mouseleave", () => {
         clearInterval(moveInterval)
     })
 
@@ -187,7 +209,7 @@ async function createWindow(name, appName = "calculator") {
         link.href = `/apps/${appName}/${appName}.css`
         document.head.appendChild(link)
 
-        if (app.init(windowBody)) {
+        if (app.init) {
             app.init(windowBody);
         }
 

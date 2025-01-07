@@ -1,0 +1,44 @@
+.appStore {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, 47px);
+    gap: 10px;
+    padding: 10px;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+}
+
+.appStore > .app {
+    /* background: blue; */
+    /* border: 1px solid var(--accent); */
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.appStore > .app > .appName {
+    font-weight: 700;
+}
+
+.appStore > .app > .appDownloads {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.appStore > .app > .downloadBtn {
+    width: 90px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.appStore > .app > .downloadBtn.installed {
+    background: rgb(255, 43, 43);
+}

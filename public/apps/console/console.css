@@ -1,0 +1,57 @@
+.consoleApp {
+    background: #070707;
+    padding: 10px;
+    overflow-y: scroll;
+    /* height: calc(100% - 100px); */
+}
+
+.window:has(.consoleApp) {
+    border: 2px solid #222;
+    color: white;
+}
+
+.window:has(.consoleApp) > .moveBar {
+    background: #222
+}
+
+.window:has(.consoleApp) > .moveBar > *,
+.window:has(.consoleApp) > .moveBar > .btnBox > * > i {
+    color: white;
+    fill: white;
+}
+
+.consoleApp > .saveLogBtn {
+    background: #070707;
+    color: white;
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+    border: 2px solid #222;
+    padding: 10px;
+    border-radius: 5px;;
+}
+
+.consoleApp > div {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.consoleApp > .storage {
+    color: rgb(223, 40, 223);
+}
+
+.consoleApp > .error {
+    color: Red;
+}
+
+.consoleApp > .success {
+    color: lime;
+}
+
+.consoleApp > .warning {
+    color: yellow;
+}
+
+.consoleApp > .installing {
+    color: blue;
+}

@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+
+.testSpace {
+    width: 100%;
+    height: 100%;
+}
+
+.testSpace > * {
+    font-family: 'Inter';
+}
+
+.testSpace > .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: calc(100% - 20px);
+    background-color: var(--background);
+    padding: 10px 0px;
+    border-right: 2px solid var(--lighter-shade);
+    transition: all 250ms;
+}
+
+.testSpace > .sidebar.opened {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: calc(100% - 20px);
+    background-color: var(--background);
+    padding: 10px 20px;
+    border-right: 2px solid var(--lighter-shade);
+}
+
+.testSpace > .sidebar > .title {
+    display: none;
+}
+
+.testSpace > .sidebar.opened > .title {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.testSpace > .sidebar > .closeMenu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+    transform: rotateY(180deg);
+    transition: all 250ms;
+}
+
+.testSpace > .sidebar.opened > .closeMenu {
+    right: 10px;
+    transform: rotateY(0deg);
+}
+
+.testSpace > .sidebar > .main {
+    display: none;
+}
+
+.testSpace > .sidebar.opened > .main {
+    display: block;
+    width: calc(100%);
+    margin-top: 10px;
+}
+
+.testSpace > .sidebar.opened > .main > div {
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.testSpace > .sidebar.opened > .main > div:not(:first-child) {
+    border-top: 2px solid var(--lighter-shade);
+}
+
+.testSpace > .sidebar > .footer {
+    display: none;
+}
+
+.testSpace > .sidebar.opened > .footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background: red; */
+    width: calc(100% - 40px);
+    padding: 0px 20px;
+}
+
+.testSpace > .sidebar.opened > .footer > div {
+    padding: 10px 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.testSpace > .sidebar.opened > .footer > div:not(div:first-child) {
+    border-top: 2px solid var(--lighter-shade);
+}
+
+.testSpace > .sectionTitle {
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 60px;
+    transition: all 250ms;
+}
+
+.testSpace > .content > .createNewProject {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;;
+    font-weight: bold;
+}
+
+.testSpace > .content > .projectContainer {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 230px);
+    gap: 10px;
+    transition: all 250ms;
+}
+
+.testSpace > .content {
+    position: absolute;
+    width: calc(100% - 80px);
+    height: calc(100% - 60px);
+    margin-left: 60px;
+    transition: all 250ms;
+}
+
+.testSpace:has(.sidebar.opened) > .content {
+    margin-left: 250px;
+    width: calc(100% - 270px);
+}
+
+.testSpace:has(.sidebar.opened) > .sectionTitle {
+    margin-left: 250px;
+}
+
+.testSpace > .content > .projectContainer > .project {
+    background: var(--lighter-shade);
+    padding: 10px 10px;
+    border-radius: 10px;
+    height: 140px;
+    position: relative;
+}
+
+.testSpace > .content > .projectContainer > .project > .projectName {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.testSpace > .content > .projectContainer > .project > .projectDesc {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.testSpace > .content > .projectContainer > .project > .lastModified {
+    font-size: 14px;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.testSpace > .content > .newProjectMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--background);
+    border-left: 2px solid var(--lighter-shade);
+    transition: all 250ms;
+}
+
+.testSpace > .content >.newProjectMenu.closed {
+    right: calc(-25% - 20px);
+}
+
+.testSpace > .content >.newProjectMenu > .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-block: 5px;
+    margin-bottom: 10px;
+    width: calc(100% - 70px);
+}
+
+.testSpace > .content >.newProjectMenu > .closeNewProject {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(255, 43, 43);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+.testSpace > .content >.newProjectMenu > .inputFields {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.testSpace > .content >.newProjectMenu > .inputFields > *:not(label) {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid var(--lighter-shade);
+    margin-bottom: 10px;
+}
+
+.testSpace > .content >.newProjectMenu > .inputFields > *:not(label):focus {
+    outline: none;
+    border: 2px solid var(--accent);
+}
+
+.testSpace > .content >.newProjectMenu > .inputFields > textarea.projectDescriptionInput {
+    height: 100vh;
+    max-height: calc(100vh - 300px);
+    padding: 10px;
+    font-family: "inter";
+    resize: none;
+}
+
+.testSpace > .content >.newProjectMenu >.inputFields > label {
+    font-size: 14px;
+}
+
+.testSpace > .content > .newProjectMenu > .projectTemplates {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.testSpace > .content > .newProjectMenu > .templates {
+    display: flex;
+    width: 100%;
+}
+
+.testSpace > .content > .newProjectMenu > .templates > div {
+    background: var(--lighter-shade);
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-right: 2px solid var(--shadow);
+}
+
+.testSpace > .content > .newProjectMenu > .templates > div:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.testSpace > .content > .newProjectMenu > .templates > div:last-child {
+    border-radius: 0 5px 5px 0;
+    border: none
+}
+
+.testSpace > .content > .newProjectMenu > .templates > div.selected {
+    background: var(--accent);
+    color: white;
+}
+
+.testSpace > .content > .newProjectMenu > .createProjectButton {
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    width: calc(100% - 20px);
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.testSpace > .content > .saveControls {
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 36px;
+}
+
+.testSpace > .content > .saveControls > .saveProject{
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.testSpace > .content > .saveControls > .testProject {
+    background-color: var(--background);
+    border: 2px solid var(--lighter-shade);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.testSpace > .content > .saveControls > .deleteProject {
+    background-color: rgb(255, 43, 43);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.testSpace > .content > .saveControls > .saveStatus {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.textEditor {
+    margin-top: 5px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.textEditor > .javascript, .textEditor > .css {
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+}
+
+.textEditor > div > .tab {
+    height: 20px;
+    background: var(--lighter-shade);
+    width: min-content;
+    padding: 5px 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.textEditor > .javascript > .jsEditor, .textEditor > .css > .cssEditor {
+    height: calc(100% - 35px);
+    width: calc(100%);
+    /* resize: none; */
+    border: 2px solid var(--lighter-shade);
+    border-radius: 0 5px 5px 5px;
+    font-family: 'Azeret mono', monospace;
+    /* padding: 10px; */
+}
+
+.textEditor > .javascript > .jsTextArea:focus, .textEditor > .css > .cssTextArea:focus {
+    outline: none;
+    border: 2px solid var(--accent);
+}
+
+.projectSettingsBtn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
