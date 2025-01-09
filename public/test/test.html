@@ -22,22 +22,57 @@
         <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/22/42/58/22425887-a4e0-1a26-ffbc-f2562ddfc68e/artwork.jpg/1200x1200bb.jpg" alt="">
     </div>
     <div class="testSpace">
-        <div class="sectionTitle">Project #1</div>
-        <div class="content">
+        <div class="sectionTitle">Tasks</div>
+        <div class="content tasks">
             <div class="overview section">
-                <div class="title">Overview</div>
+                <div class="title">Task overview</div>
+                <div class="stats">
+                    <div class="totalTasks">
+                        <div class="title">Total tasks</div>
+                        <div class="value">102</div>
+                    </div>
+                    <div class="completedTasks">
+                        <div class="title">Completed tasks</div>
+                        <div class="value">49</div>
+                    </div>
+                    <div class="percentageCompleted">
+                        <div class="title">Completeness %</div>
+                        <div class="value">48%</div>
+                        <div class="progressbar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            <div class="searchTasks section">
+                <div class="title">All Tasks</div>
+                <div class="searchOptions">
+                    <input type="text" class="search" placeholder="Search tasks">
+                    <div class="tags">
+                        <div class="searchingTags">
+                            <div class="tag to-do">To-do</div>
+                            <div class="tag feature">Feature</div>
+                            <div class="tag deployment">Deployment</div>
+                            <div class="tag quick">Quick</div>
+                        </div>
+                        <button class="addTags">Tags</button>
+                        <div class="addTagsMenu"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="addTask section">
+                <div class="title">Add Task</div>
+            </div>
         </div>
         <div class="sidebar">
             <div class="title">Menu</div>
             <button class="closeMenu"><i class="fa-solid fa-chevron-left"></i></button>
             <div class="main">
-                <div data-tab="dashboard" class="dashboard">Dashboard</div>
-                <div data-tab="projects" class="projects">Projects</div>
-                <div data-tab="favorites" class="favorites">Favorites</div>
-                <div data-tab="categories" class="categories">Categories</div>
-                <div data-tab="tasks" class="tasks">Tasks</div>
+                <div data-tab="dashboard" class="dashboard"><i class="fa-solid fa-home"></i><div>Dashboard</div></div>
+                <div data-tab="projects" class="projects"><i class="fa-solid fa-folder"></i><div>Projects</div></div>
+                <div data-tab="favorites" class="favorites"><i class="fa-solid fa-star"></i><div>Favorites</div></div>
+                <div data-tab="categories" class="categories"><i class="fa-solid fa-tag"></i><div>Categories</div></div>
+                <div data-tab="tasks" class="tasks"><i class="fa-solid fa-pencil"></i><div>Tasks</div></div>
             </div>
             <div class="recentProjects">
                 <div class="title">Recent Projects</div>
@@ -48,8 +83,8 @@
                 </div>
             </div>
             <div class="footer">
-                <div class="howToUse">How to use</div>
-                <div class="settings">Settings</div>
+                <div class="howToUse"><i class="fa-solid fa-circle-info"></i>How to use</div>
+                <div class="settings"><i class="fa-solid fa-gear"></i>Settings</div>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@ body.offline{
 
 :root {
     --background: #fff;
-    --lighter-shade: #ececec;
+    --lighter-shade: #dadada;
     --accent: #374dde;
     --text: #000;
     --icon-filter: none;
@@ -12,6 +12,13 @@ body.offline{
     --clock-shadow: none;
     --shadow: #aaa;
     --highlights: #fff;
+    /* --background: #070707;
+    --lighter-shade: #222;
+    --accent: #374dde;
+    --text: #fff;
+    --icon-filter: invert();
+    --shadow: #000;
+    --highlights: #333; */
 }
 
 .offlineMode {

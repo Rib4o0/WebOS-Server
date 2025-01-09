@@ -8,6 +8,11 @@
 
 .testSpace  * {
     font-family: 'Inter';
+    color: var(--text);
+}
+
+body {
+    background: var(--background);
 }
 
 .testSpace > .sidebar {
@@ -72,9 +77,17 @@
 }
 
 .testSpace > .sidebar.opened > .main > div {
+    display: flex;
     padding: 10px 0;
     font-weight: bold;
     cursor: pointer;
+    width: 100%;
+}
+
+.testSpace > .sidebar.opened > .main > div > i {
+    width: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .testSpace > .sidebar.opened > .main > div:not(:first-child) {
@@ -99,6 +112,10 @@
     border-bottom: 2px solid var(--lighter-shade);
     padding-block: 10px;
     font-size: 14px;
+}
+
+.testSpace > .sidebar > .main > div > i, .testSpace > .sidebar > .footer > div > i {
+    margin-right: 10px;
 }
 
 .testSpace > .sidebar > .recentProjects > .projects > div:last-child {
@@ -151,7 +168,7 @@
 .testSpace > .content > .projectContainer {
     margin-top: 5px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 230px);
+    grid-template-columns: repeat(auto-fit, 270px);
     gap: 10px;
     transition: all 250ms;
 }
@@ -177,6 +194,7 @@
     background: var(--lighter-shade);
     padding: 10px 10px;
     border-radius: 10px;
+    width: 250px;
     height: 140px;
     position: relative;
 }
@@ -198,6 +216,16 @@
     bottom: 10px;
     right: 10px;
 }
+
+.testSpace > .content > .projectContainer > .project > .favoriteBtn {
+    width: min-content;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    border: none;
+    background: transparent;
+}
+
 
 .testSpace > .content > .newProjectMenu {
     position: fixed;
@@ -247,6 +275,7 @@
     border-radius: 5px;
     border: 2px solid var(--lighter-shade);
     margin-bottom: 10px;
+    background: transparent;
 }
 
 .testSpace > .content >.newProjectMenu > .inputFields > *:not(label):focus {
@@ -371,7 +400,8 @@
 }
 
 .textEditor > .javascript > .jsEditor, .textEditor > .css > .cssEditor {
-    height: calc(100% - 35px);
+    height: calc(100vh - 105px);
+    background: red;
     width: calc(100%);
     /* resize: none; */
     border: 2px solid var(--lighter-shade);
@@ -396,3 +426,426 @@
     border: none;
     border-radius: 5px;
 }
+
+.testSpace > .content.dashboard {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.testSpace > .content.dashboard > .section {
+    border: 2px solid var(--lighter-shade);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.testSpace > .content.dashboard > .section > .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.testSpace > .content.dashboard > .overview {
+    grid-column: span 1;
+    grid-row: span 10;
+}
+
+.testSpace > .content.dashboard > .overview > .stats {
+    margin-top: 5px;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testSpace > .content.dashboard > .overview > .stats > div {
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.testSpace > .content.dashboard > .overview >.stats > div > .value {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.testSpace > .content.dashboard > .overview >.stats > .tasksCompleted > .progressbar {
+    width: 70%;
+    height: 10px;
+    border-radius: 10px;
+    background: var(--lighter-shade);
+    margin-top: 5px;
+}
+
+.testSpace > .content.dashboard > .overview >.stats > .tasksCompleted > .progressbar > .progress {
+    height: 100%;
+    width: 73%;
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.testSpace > .content.dashboard > .recentProjects {
+    grid-column: span 6;
+    grid-row: span 7;
+}
+
+.testSpace > .content.dashboard > .recentProjects > .projects {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: calc(100% - 30px);
+    gap: 5px;
+} 
+
+.testSpace > .content.dashboard > .recentProjects > .projects > .recentProject {
+    background: var(--lighter-shade);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.testSpace > .content.dashboard > .recentProjects > .projects > .recentProject > .projectName {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.testSpace > .content.dashboard > .recentProjects > .projects > .recentProject > .projectDesc {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.testSpace > .content.dashboard > .favorites {
+    grid-column: span 5;
+    grid-row: span 6;
+}
+
+.testSpace > .content.dashboard > .favorites > .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+    height: calc(100% - 30px);
+    overflow-y: scroll;
+}
+
+.testSpace > .content.dashboard > .favorites > .projects > .favoriteProject {
+    background: var(--lighter-shade);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.testSpace > .content.dashboard > .favorites > .projects > .favoriteProject > .projectName {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.testSpace > .content.dashboard > .favorites > .projects > .favoriteProject > .projectDesc {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.testSpace > .content.dashboard > .quickTip {
+    grid-column: span 7;
+    grid-row: 11 / span 2;
+    border: 2px solid var(--accent);
+}
+
+.testSpace > .content.dashboard > .quickActions{
+    grid-column: 2 / span 6;
+    grid-row: 8 / span 3;
+    /* background-color: blue; */
+}
+
+.testSpace > .content.dashboard > .quickActions > .actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 5px;
+    height: calc(100% - 30px);
+    gap: 5px;
+}
+
+.testSpace > .content.dashboard > .quickActions > .actions > .quickAction {
+    width: calc(100% );
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--lighter-shade);
+    padding: 0 10px;
+    margin: 0;
+    border: none;
+}
+
+.testSpace > .content.dashboard > .tasks {
+    grid-row: span 6;
+    grid-column: span 5;
+} 
+
+.testSpace > .content.dashboard > .tasks > .tasksList {
+    height: calc(100% - 25px);
+    margin-top: 5px;
+    overflow-y: scroll;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--lighter-shade);
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div:first-child  {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div:first-child > .taskName {
+    font-weight: 600;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div:first-child > .taskDescription {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div:last-child  {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: end;
+    margin-right: 10px;
+    width: 50%;
+    /* background: red; */
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div:last-child > i  {
+    color: red;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags {
+    /* background: red; */
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* background: blue */
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag {
+    padding: 5px 10px;
+    text-align: center;
+    height: min-content;
+    border-radius: 5px;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.to-do {
+    background: #007BFF;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.fix {
+    background: #FF4D4D;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.high {
+    background: #B22222;
+    color: white;
+}
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.medium {
+    background: #FF8C00;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.low {
+    background: #FFD700;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.inprogress {
+    background: #20B2AA;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.completed {
+    background: #32CD32;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.blocked {
+    background: #A9A9A9;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.quick {
+    background: #ADFF2F;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.long-term {
+    background: #4682B4;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.recurring {
+    background: #8A2BE2;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.bug {
+    background: #FF4500;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.feature {
+    background: #1E90FF;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.documentation {
+    background: #D3D3D3;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.design {
+    background: #FF69B4;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.research {
+    background: #9370DB;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.assigned {
+    background: #006400;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.unassigned {
+    background: #FF7F7F;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.review {
+    background: #FFD700;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.urgent {
+    background: #FFA500;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.deffered {
+    background: #87CEFA;
+    color: white;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.testing {
+    background: #FFFFE0;
+    color: black;
+}
+
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.deployment {
+    background: #6A5ACD;
+    color: white;
+}
+
+.testSpace > .content.tasks {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 10px;
+}
+
+.testSpace > .content.tasks > .section {
+    border: 2px solid var(--lighter-shade);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.testSpace > .content.tasks > .section > .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.testSpace > .content.tasks > .overview {
+    grid-column: span 6;
+    grid-row: span 3;
+}
+
+.testSpace > .content.tasks > .overview > .stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100%  - 30px);
+    margin-top: 5px;
+}
+
+.testSpace > .content.tasks > .overview > .stats > div {
+    /* background-color: red; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.testSpace > .content.tasks > .overview > .stats > div > .value {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.testSpace > .content.tasks > .overview > .stats > div > .progressbar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--lighter-shade);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.testSpace > .content.tasks > .overview > .stats > div > .progressbar > .progress {
+    width: 48%;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.testSpace > .content.tasks > .searchTasks {
+    grid-column: span 6;
+    grid-row: 4 / span 9;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--lighter-shade);
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > input:focus {
+    outline: none;
+}
+
+.testSpace > .content.tasks > .addTask {
+    grid-column: span 6;
+    grid-row: span 12;
+}
+
