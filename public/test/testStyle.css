@@ -640,123 +640,147 @@ body {
     /* background: blue */
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag,
+.testSpace .tag {
     padding: 5px 10px;
     text-align: center;
     height: min-content;
     border-radius: 5px;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.to-do {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.to-do,
+.testSpace .tag.to-do {
     background: #007BFF;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.fix {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.fix,
+.testSpace .tag.fix {
     background: #FF4D4D;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.high {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.high,
+.testSpace .tag.high {
     background: #B22222;
     color: white;
 }
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.medium {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.medium,
+.testSpace .tag.medium {
     background: #FF8C00;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.low {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.low,
+.testSpace .tag.low {
     background: #FFD700;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.inprogress {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.inprogress,
+.testSpace .tag.inprogress {
     background: #20B2AA;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.completed {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.completed,
+.testSpace .tag.completed {
     background: #32CD32;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.blocked {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.blocked,
+.testSpace .tag.blocked {
     background: #A9A9A9;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.quick {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.quick,
+.testSpace .tag.quick {
     background: #ADFF2F;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.long-term {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.long-term,
+.testSpace .tag.long-term {
     background: #4682B4;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.recurring {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.recurring,
+.testSpace .tag.recurring {
     background: #8A2BE2;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.bug {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.bug,
+.testSpace .tag.bug {
     background: #FF4500;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.feature {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.feature,
+.testSpace .tag.feature {
     background: #1E90FF;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.documentation {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.documentation,
+.testSpace .tag.documentation {
     background: #D3D3D3;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.design {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.design,
+.testSpace .tag.design {
     background: #FF69B4;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.research {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.research,
+.testSpace .tag.research {
     background: #9370DB;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.assigned {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.assigned,
+.testSpace .tag.assigned {
     background: #006400;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.unassigned {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.unassigned,
+.testSpace .tag.unassigned {
     background: #FF7F7F;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.review {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.review,
+.testSpace .tag.review {
     background: #FFD700;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.urgent {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.urgent,
+.testSpace .tag.urgent {
     background: #FFA500;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.deffered {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.deffered,
+.testSpace .tag.deffered {
     background: #87CEFA;
     color: white;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.testing {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.testing,
+.testSpace .tag.testing {
     background: #FFFFE0;
     color: black;
 }
 
-.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.deployment {
+.testSpace > .content.dashboard > .tasks > .tasksList > .task > div > .tags > .tag.deployment,
+.testSpace .tag.deployment {
     background: #6A5ACD;
     color: white;
 }
@@ -827,7 +851,6 @@ body {
 }
 
 .testSpace > .content.tasks > .searchTasks > .searchOptions {
-    background-color: red;
     display: flex;
     flex-direction: column;
     margin-top: 5px;
@@ -844,8 +867,167 @@ body {
     outline: none;
 }
 
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTags {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .searchingTags {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions .tag > i {
+    color: white;
+    opacity: 1;
+    position: relative;
+    top: 1px;
+    margin-left: 7px;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTagsMenu {
+    display:none
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTagsMenu.opened {
+    display: block;
+    position: absolute;
+    top: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--lighter-shade);
+    padding: 10px;
+    z-index: 2;
+    background: var(--background);
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTagsMenu > .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTagsMenu > .tagSections {
+    display: flex;
+    gap: 5px;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTagsMenu >.tagSections >.section {
+    width: 20%;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTagsMenu >.tagSections >.section > .tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.testSpace > .content.tasks > .searchTasks > .searchOptions > .tags > .addTagsMenu >.tagSections >.section > .tags > .tag {
+    width: min-content;
+    white-space: nowrap;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+    overflow-y: scroll;
+    height: calc(100% - 115px);
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks >.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--lighter-shade);
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks >.task .taskName {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks > .task > div:last-child {
+    display: flex;
+    gap: 10px;
+    width: 50%;
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks > .task > div:last-child > .tags {
+    width: calc(100% - 30px);
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks > .task > div:last-child > .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks > .task > div:last-child > .actions > i {
+    font-size: 20px;
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.testSpace > .content.tasks > .searchTasks > .tasks > .task > div:last-child > .actions > i:first-child {
+    font-size: 16px;
+}
+
 .testSpace > .content.tasks > .addTask {
     grid-column: span 6;
     grid-row: span 12;
 }
 
+.testSpace > .content.testing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testSpace > .content.testing > .testWindow {
+    width: 50%;
+    height: 60%;
+    border-radius: 5px;
+    resize: both;
+    position: fixed;
+    border: 2px solid var(--lighter-shade);
+    overflow: hidden;
+}
+
+.testSpace > .content.testing > .testWindow > .moveBar {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: var(--lighter-shade);
+    width: calc(100% - 20px);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    user-select: none;
+}
+
+.testSpace > .content.testing > .testWindow > .windowBody {
+    background: var(--background);
+    backdrop-filter: blur(10px);
+    height: calc(100% - 30px);
+}
