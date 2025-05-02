@@ -5,6 +5,8 @@ const sidebar = document.querySelector('.sidebar');
 const menuRecentProjects = sidebar.querySelector('.recentProjects');
 const tabs = sidebar.querySelectorAll("[data-tab]");
 
+const projects_KEY = "9u3j192j91nvuaiwBahwno19VHa23-Projects";
+
 let projects = [
     {   
         projectName: 'Project #1',
@@ -342,6 +344,12 @@ let projects = [
     }
 ];
 
+if (localStorage.getItem(projects_KEY)) {
+    projects = localStorage.getItem(projects_KEY);
+} else {
+    projects = [];
+}
+
 
 let tasks = [
     {
@@ -480,7 +488,7 @@ tabs.forEach(tab => {
     })
 })
 
-// loadSection("dashboard");
+loadSection("dashboard");
 
 function loadSection(section) {
     content.setAttribute('class', `content ${section}`);
@@ -808,12 +816,19 @@ function loadProject(project) {
         theme: 'default',
         value: project.css,
     });
+
+    const saveProjectBtn = content.querySelector(".saveProject");
+    saveProjectBtn.addEventListener("click", () => {
+        project.js = jsEditor.getValue();
+        project.css = cssEditor.getValue();
+        saveProjects();
+    })
     
     // Explicitly set the editor height
     cssEditor.setSize('100%', '100%');
 }
 
-testProject(projects[8]);
+// testProject(projects[8]);
 
 function testProject(project) {
     sectionTitle.innerHTML = project.projectName + ": Testing";
@@ -881,7 +896,9 @@ function testProject(project) {
     
 }
 
-
+function saveProjects() {
+    localStorage.setItem(projects_KEY, JSON.stringify(projects));
+}
 
 
 // Explicitly set the editor height

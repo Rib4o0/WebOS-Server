@@ -18,7 +18,6 @@ app.get("/test", (req, res) => {
 
 app.get("/download/:appName", (req, res) => {
     let appName = req.params.appName;
-    
 })
 
 app.listen(port, () => {
